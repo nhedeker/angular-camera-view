@@ -3,12 +3,8 @@
 
   angular.module('cameraApp')
     .filter('rating', () => {
-      return function(input) {
-        let stars = '';
-        for (let i = 1; i <= input; i++) {
-          stars += '*';
-        }
-        return stars;
+      return function(num) {
+        return '*'.repeat(num);
       };
     });
 })();
