@@ -35,18 +35,13 @@
     };
 
     this.removeItem = function(camera) {
-      for (let element of this.shoppingCart) {
-        if (element.id === camera.id) {
-          this.shoppingCart.splice(this.shoppingCart.indexOf(element));
-
-          break;
-        }
-      }
+      this.shoppingCart.splice(this.shoppingCart.indexOf(camera), 1);
       this.calculateCheckout();
     }
   });
 
   app.controller('CameraCtrl', function() {
+    this.search = '';
     this.ordering = 'name';
     this.catalog = [
       {
